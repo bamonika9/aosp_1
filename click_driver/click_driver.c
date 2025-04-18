@@ -10,7 +10,7 @@
 static struct kobject *click_kobj;
 static int value = 0; // Stores 0 or 1
 
-// Show function for value node
+
 static ssize_t value_show(struct kobject *kobj, 
                          struct kobj_attribute *attr, 
                          char *buf)
@@ -18,7 +18,7 @@ static ssize_t value_show(struct kobject *kobj,
     return scnprintf(buf, PAGE_SIZE, "%d\n", value);
 }
 
-// Store function for trigger node
+
 static ssize_t trigger_store(struct kobject *kobj, 
                             struct kobj_attribute *attr,
                             const char *buf, 
@@ -40,7 +40,7 @@ static ssize_t trigger_store(struct kobject *kobj,
     return count;
 }
 
-/* Define sysfs attributes */
+
 static struct kobj_attribute value_attr = __ATTR_RO(value);
 static struct kobj_attribute trigger_attr = __ATTR(trigger, 0660, NULL, trigger_store);
 
@@ -58,12 +58,12 @@ static int __init click_driver_init(void)
 {
     int ret;
 
-    // Create kobject in /sys/kernel/click
+   
     click_kobj = kobject_create_and_add("click", kernel_kobj);
     if (!click_kobj)
         return -ENOMEM;
 
-    // Create sysfs nodes
+    
     ret = sysfs_create_group(click_kobj, &click_attr_group);
     if (ret) {
         kobject_put(click_kobj);
