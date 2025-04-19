@@ -1,11 +1,11 @@
 #include "ClickHal.hpp"
-#include <unistd.h> // for sleep
+#include <unistd.h>
 
 int main() {
     ClickHal hal;
 
     hal.triggerClick();
-    sleep(1); // Give the driver time if needed
+    sleep(1);
 
     hal.readValue();
     return 0;
