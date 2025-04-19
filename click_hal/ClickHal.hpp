@@ -13,4 +13,4 @@ public:
 
 };
 
-#endif // CLICK_HAL_HPP
+#endif
