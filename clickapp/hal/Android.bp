@@ -1,0 +1,15 @@
+cc_binary {
+    name: "android.hardware.click-service",
+    srcs: ["ClickHal.cpp", "service.cpp"],
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libbinder",
+        "libbase",
+    ],
+    static_libs: [
+        "android.hardware.click-V1-cpp",
+    ],
+    init_rc: ["click_service.rc"],
+    vendor: true,
+}

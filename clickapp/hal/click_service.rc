@@ -1,0 +1,5 @@
+service click_hal /vendor/bin/android.hardware.click-service
+    class hal
+    user system
+    group system
+    oneshot

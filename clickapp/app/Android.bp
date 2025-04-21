@@ -1,0 +1,11 @@
+android_app {
+    name: "ClickClientApp",
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+    manifest: "AndroidManifest.xml",
+    sdk_version: "current",
+
+    static_libs: [
+        "android.hardware.click-V1-java",
+    ],
+}

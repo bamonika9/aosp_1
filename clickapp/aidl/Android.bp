@@ -1,0 +1,14 @@
+aidl_interface {
+    name: "android.hardware.click",
+    vendor_available: true,
+    srcs: ["android/hardware/click/*.aidl"],
+    stability: "vintf",
+    backend: {
+        java: {
+            enabled: true,
+        },
+        cpp: {
+            enabled: true,
+        },
+    },
+}
